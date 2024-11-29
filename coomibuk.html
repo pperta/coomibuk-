@@ -1,0 +1,508 @@
+<html><head><base href="." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>COOMIBUK - Coopérative Minière de Bunyakiri</title>
+
+<style>
+:root {
+  --primary: #0A5D4C;
+  --secondary: #F4A460;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1518611507436-f9221403cca2') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+/* Sections */
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* A propos */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* Portfolio */
+.portfolio {
+  background-color: var(--light);
+  padding: 100px 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.portfolio-category {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-category h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.portfolio-item {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item i {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.portfolio-item h4 {
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.portfolio-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Contact */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-details {
+  line-height: 1.8;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Add this to the existing CSS */
+.social-links a:hover {
+  color: var(--secondary) !important;
+  transition: color 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-grid,
+  .services-grid,
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-items {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="#" class="logo">COOMIBUK</a>
+    <div class="nav-links">
+      <a href="#home">Accueil</a>
+      <a href="#about">À propos</a>
+      <a href="#portfolio">Porte feuille</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p style="font-size: 24px; margin-bottom: 10px;">Coopérative Minière de Bunyakiri</p>
+    <h1>COOMIBUK</h1>
+    <p>Votre partenaire de confiance dans le secteur minier</p>
+    <a href="#contact" class="btn">Contactez-nous</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>À Propos de Nous</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-content">
+        <p>La Coopérative Minière de Bunyakiri (COOMIBUK) a été fondée en 2009 et s'engage depuis lors dans plusieurs projets de développement dans le territoire de Kalehe, précisément à Bunyakiri.</p>
+        <p>Notre objectif principal est de soutenir les communautés locales à travers l'exploitation minière responsable et durable. Récemment, notre coopérative a lancé une plantation de maïs dans le cadre de sa lutte contre la faim, contribuant ainsi à améliorer la sécurité alimentaire dans la région.</p>
+        <p>Nous travaillons en étroite collaboration avec les communautés locales pour créer des opportunités d'emploi et promouvoir des pratiques responsables dans nos activités, tout en assurant un développement durable et une croissance économique locale.</p>
+        <a href="#contact" class="btn">En savoir plus</a>
+      </div>
+      <div class="about-image">
+        <svg viewBox="0 0 200 200" width="100%" height="300">
+          <circle cx="100" cy="100" r="80" fill="var(--primary)" opacity="0.1"/>
+          <circle cx="100" cy="100" r="60" fill="var(--primary)" opacity="0.2"/>
+          <circle cx="100" cy="100" r="40" fill="var(--primary)" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2>Notre Porte feuille</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-category">
+        <h3>Minerais</h3>
+        <div class="portfolio-items">
+          <div class="portfolio-item">
+            <i class="fas fa-crown"></i>
+            <h4>Or</h4>
+            <p>Or pur extrait de nos mines</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-cube"></i>
+            <h4>Coltan</h4>
+            <p>Minerai de haute qualité</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-dice-d20"></i>
+            <h4>Cassitérite</h4>
+            <p>Principal minerai d'étain</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-gem"></i>
+            <h4>Pierres Précieuses</h4>
+            <p>Diverses gemmes de qualité</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-square"></i>
+            <h4>Corindo</h4>
+            <p>Minéral précieux</p>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-category">
+        <h3>Agriculture</h3>
+        <div class="portfolio-items">
+          <div class="portfolio-item">
+            <i class="fas fa-seedling"></i>
+            <h4>Maïs</h4>
+            <p>Culture vivrière principale</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-leaf"></i>
+            <h4>Banane</h4>
+            <p>Bananes plantains et douces</p>
+          </div>
+          <div class="portfolio-item">
+            <i class="fas fa-carrot"></i>
+            <h4>Manioc</h4>
+            <p>Culture de base locale</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background-color: var(--light);">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-gem"></i>
+        </div>
+        <h3>Exploitation Minière</h3>
+        <p>Extraction responsable de minerais avec des techniques modernes et respectueuses de l'environnement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h3>Agriculture</h3>
+        <p>Production agricole durable et support aux agriculteurs locaux pour une meilleure productivité.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>Conseil</h3>
+        <p>Expertise et accompagnement dans les projets miniers et agricoles.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Développement</h3>
+        <p>Mise en œuvre de projets de développement communautaire pour améliorer la qualité de vie locale.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Éducation</h3>
+        <p>Formation et sensibilisation des communautés aux pratiques minières responsables et aux techniques agricoles modernes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contactez-nous</h2>
+    </div>
+    <div class="contact-info">
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Votre nom" required>
+          <input type="email" placeholder="Votre email" required>
+          <textarea rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </div>
+      <div class="contact-details">
+        <h3>Nos Coordonnées</h3>
+        <p><i class="fas fa-map-marker-alt"></i> RDC, Sud-Kivu, Kalehe, Bunyakiri, Bitale</p>
+        <p><i class="fas fa-phone"></i> +243 813098368 / +243 818682539</p>
+        <p><i class="fas fa-envelope"></i> coomibukcoomibuk@gmail.com</p>
+        <div class="map" style="margin-top: 20px; height: 300px;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15926.205322294707!2d28.566666!3d-2.066667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd0435fa2a1e2d%3A0x4e711f8f7496972e!2sBunyakiri!5e0!3m2!1sfr!2scd!4v1656000000000!5m2!1sfr!2scd" 
+            width="100%" 
+            height="100%" 
+            style="border:0; border-radius: 10px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="social-links" style="margin-bottom: 20px;">
+      <a href="https://www.facebook.com/cooperativeminièredebunyakiri" target="_blank" style="color: white; font-size: 24px;">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+    <p>&copy; 2024 COOMIBUK. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    } else {
+        navbar.style.background = 'white';
+    }
+});
+</script>
+
+</body></html>
